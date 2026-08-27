@@ -1,0 +1,10 @@
+[33md6789a8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: pull origin main --rebase (finish): returning to refs/heads/main
+[33md6789a8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{1}: pull origin main --rebase (pick): lesgo
+[33m2157ea8[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{2}: pull origin main --rebase (start): checkout 2157ea8a5292b5ec31bb8da4f303aded17639806
+[33m832f6b4[m HEAD@{3}: commit: lesgo
+[33m815547f[m HEAD@{4}: commit: add my-app project
+[33mf545d61[m HEAD@{5}: pull origin main --rebase (finish): returning to refs/heads/main
+[33mf545d61[m HEAD@{6}: pull origin main --rebase (pick): second push
+[33mae51da9[m HEAD@{7}: pull origin main --rebase (start): checkout ae51da9f25dd1abeff0d845c2febaac0b13f1727
+[33m8df023d[m HEAD@{8}: commit: second push
+[33m54675fc[m HEAD@{9}: clone: from https://github.com/tudusod/-hop.git

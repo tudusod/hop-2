@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "express-be",
   "version": "1.0.0",
   "description": "",
@@ -7,25 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
-=======
-  "name": "tudusod",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
->>>>>>> 815547f64fc1ebba7db4b5656b4ec8eeadc1e052
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tudusod/-hop.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-<<<<<<< HEAD
   "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/tudusod/-hop/issues"
+  },
+  "homepage": "https://github.com/tudusod/-hop#readme",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "express": "^5.2.1",
     "mongoose": "^9.9.4"
   }
-=======
-  "description": ""
->>>>>>> 815547f64fc1ebba7db4b5656b4ec8eeadc1e052
 }
