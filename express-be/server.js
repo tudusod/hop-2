@@ -12,7 +12,7 @@ const connectDb = async () => {
 connectDb()
 
 app.use('/user', userRoute )
-app.user('/class', classRoute)
+app.use('/class', classRoute)
 
 
 app.listen(port, () => {

@@ -1,20 +1,21 @@
-const express = require('expess')
+const express = require('express');
 
-const userRoute = express.Router()
+const classRoute = express.Router();
+const ClassModel = require('../models/class.schema');
 
 classRoute.post('/class', async (req, res) => {
-  const body = req.body
+  const body = req.body;
 
-    try {
-        const response = await ClassModel.create({
-          name: body.name,
-          teachers: body.teachers,
-          roomNumber: body.roomNumber
-        })
-        res.json(response)
-    } catch (error) {
-      res.status(400).json({ error: error.message })
-    }
-})
+  try {
+    const response = await ClassModel.create({
+      name: body.name,
+      teachers: body.teachers,
+      roomNumber: body.roomNumber
+    });
+    res.json(response);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
 
-module.exports = classRoute
+module.exports = classRoute;

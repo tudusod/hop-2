@@ -1,4 +1,4 @@
-const User = require('./models/user.schema');
+const User = require('../models/user.schema');
 
 const getUsers = async (req, res) => {
   const users = await User.find({}).populate('classId')
