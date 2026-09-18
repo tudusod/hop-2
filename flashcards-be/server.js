@@ -2,9 +2,11 @@ import express from 'express'
 import mongoose from 'mongoose'
 import userRouter from './route/user.route.js'
 import flashCardRoute from './route/flashcard.route.js'
+import cors from 'cors'
 
 const app = express()
 
+app.use(cors())
 app.use(express.json())
 app.use('/', userRouter)
 app.use('/', flashCardRoute)
