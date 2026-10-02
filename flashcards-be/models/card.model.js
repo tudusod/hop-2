@@ -20,4 +20,4 @@ const cardSchema = new mongoose.Schema(
   }
 );
 
-export const CardModel = mongoose.model("Card", cardSchema);
+export const Card = mongoose.model("Card", cardSchema);

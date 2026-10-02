@@ -11,11 +11,14 @@ const wordSchema = new mongoose.Schema(
       required: true,
     },
     card: {
+      ref: "Card",
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Card',
-      required: true
-    }
+      required: true,
+    },
   },
-);
+  {
+    timestamps: true,
+  }
+)
 
-export const WordModel = mongoose.model("Word", wordSchema);
+export const WordModel = mongoose.model("Word", wordSchema)
