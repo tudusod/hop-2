@@ -1,13 +1,17 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useContext } from "react";
-import { UserContext } from "./_providers/UserContext";
+import { useUser } from "./_providers/UserContext";
+
+type User = {
+  email: string;
+  token: string;
+};
 
 export default function Home() {
   const router = useRouter();
-  const { user } = useContext(UserContext);
-  console.log(user, 'user is on homepage')
+  const { user } = useUser(); 
+  console.log(user, 'user is on homepage');
 
   return (
     <>

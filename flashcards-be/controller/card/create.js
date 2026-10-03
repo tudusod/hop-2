@@ -1,45 +1,29 @@
 import { Card } from "../../models/card.model.js"
 import { WordModel } from "../../models/word.model.js"
-import jwt from 'jsonwebtoken'
 
 export const createCard = async (req, res) => {
-    const body = req.body
-    const words = body.words
-    const user = req.user
-    const createdCard = await CardModel.create({
-        username: body.name || body.usernames,
-        description: body.description,
-        user: 'user._id'
+  try {
+    const { name, words } = req.body
+
+    const card = await Card.create({
+      name,
+      user: req.user.id,
+      username: req.user.username,
     })
 
-    const cardWords = words.map((word) => {
-        return{
-            ...word,
-            card: createdCard._id
-        }
-    })
+    if (Array.isArray(words) && words.length > 0) {
+      await WordModel.insertMany(
+        words.map((w) => ({
+          mnWord: w.mnword,
+          enWord: w.enword,
+          card: card._id,
+        }))
+      )
+    }
 
-    await WordModel.insertMany(cardWords)
-    res.json("success")
+    res.json(card)
+  } catch (err) {
+    console.log("CREATE CARD ERROR:", err)
+    res.status(500).json({ error: err.message })
+  }
 }
-
-
-
-
-
-
-    // [
-    //     {
-    //         enWord: 'hello',
-    //         mnWord: 'sainu',
-    //         card: createdCard.id
-    //     },
-    //     {
-    //         enWord: 'bye',
-    //         mnWord: 'baay',
-    //     },
-    //     {
-    //         enWord: 'no',
-    //         mnWord: 'ugu',
-    //     }
-    // ]

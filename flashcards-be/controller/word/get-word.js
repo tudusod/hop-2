@@ -1,11 +1,12 @@
 import { WordModel } from "../../models/word.model.js"
 
 export const getWord = async (req, res) => {
-    const cardId = req.params/cardId
-    console.log(params)
-
-    const cardWords = await WordModel.find({
-        card: cardId
-    })
-    res.json('success')
+  try {
+    const { cardId } = req.params
+    const words = await WordModel.find({ card: cardId })
+    res.json(words)
+  } catch (err) {
+    console.log("GET WORD ERROR:", err)
+    res.status(500).json({ error: err.message })
+  }
 }
